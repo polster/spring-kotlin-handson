@@ -3,7 +3,7 @@ package io.dietschi.edu.products.products.model
 import java.util.*
 
 class ProductModel(
-    val id: UUID? = null,
+    val model: String? = null,
     val name: String,
     private val attributes: MutableMap<String, String>
 ) {

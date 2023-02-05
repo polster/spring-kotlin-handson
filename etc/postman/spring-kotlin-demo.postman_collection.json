@@ -29,7 +29,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"AC Cobra 427\",\n    \"attributes\": {\n        \"type\": \"car\",\n        \"designer\": \"Carol Shelby\",\n        \"build\": \"MkIII\",\n        \"production\": \"1965\",\n        \"engine\": \"V8\"\n    }\n}",
+					"raw": "{\n    \"model\": \"CSX/CSB 3101–3360\",\n    \"name\": \"AC Cobra 427\",\n    \"attributes\": {\n        \"type\": \"car\",\n        \"designer\": \"Caroll Shelby\",\n        \"build\": \"MkIII\",\n        \"production\": \"1965\",\n        \"engine\": \"V8\"\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
