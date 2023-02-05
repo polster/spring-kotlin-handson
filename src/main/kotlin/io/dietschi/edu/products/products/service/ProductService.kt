@@ -12,5 +12,16 @@ class ProductService(private val productRepository: ProductRepository) {
         productRepository.findById(id)
 
     fun createNew(productModel: ProductModel): UUID =
-        productRepository.add(productModel)
+        productRepository.persist(productModel)
+
+    fun updateAttributes(id: UUID, attributes: Map<String, String>): ProductModel {
+
+        val productModel = productRepository.findById(id)
+        attributes.forEach {
+            productModel.setAttribute(it.key, it.value)
+        }
+        productRepository.persist(productModel)
+
+        return productModel
+    }
 }

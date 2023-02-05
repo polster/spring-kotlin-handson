@@ -8,7 +8,7 @@ class ProductModel(
     private val attributes: MutableMap<String, String>
 ) {
 
-    fun addAttribute(name: String,
+    fun setAttribute(name: String,
                      value: String) {
 
         attributes[name] = value

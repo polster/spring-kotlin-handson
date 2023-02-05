@@ -17,7 +17,7 @@ class ProductRepository(
             .productModel
     }
 
-    fun add(productModel: ProductModel): UUID {
+    fun persist(productModel: ProductModel): UUID {
 
         val stored = productRepositoryMongo.save(
             productModel.toDocument()

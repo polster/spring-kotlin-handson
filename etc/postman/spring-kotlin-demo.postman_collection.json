@@ -29,7 +29,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"AC Cobra 427\",\n    \"attributes\": {\n        \"type\": \"car\",\n        \"designer\": \"Carol Shelby\",\n        \"build\": \"MkIII\",\n        \"year\": \"1965\",\n        \"engine\": \"V8\"\n    }\n}",
+					"raw": "{\n    \"name\": \"AC Cobra 427\",\n    \"attributes\": {\n        \"type\": \"car\",\n        \"designer\": \"Carol Shelby\",\n        \"build\": \"MkIII\",\n        \"production\": \"1965\",\n        \"engine\": \"V8\"\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -61,6 +61,34 @@
 					"path": [
 						"products",
 						"{{_product_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update attributes",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"engine\": \"7.0 L (427 cu in) V8\",\n    \"production\": \"1965–1967\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/products/{{_product_id}}/attributes",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"products",
+						"{{_product_id}}",
+						"attributes"
 					]
 				}
 			},
