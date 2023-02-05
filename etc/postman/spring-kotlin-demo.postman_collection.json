@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "b85f1a4b-f802-41b7-9838-5f1e0acdca81",
+		"name": "spring-kotlin-demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22363403"
+	},
+	"item": [
+		{
+			"name": "Query product by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/products/06cd379b-d7e7-414a-9d6a-2c4bf8a573b0",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"products",
+						"06cd379b-d7e7-414a-9d6a-2c4bf8a573b0"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:9990",
+			"type": "string"
+		}
+	]
+}

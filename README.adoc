@@ -1,0 +1,42 @@
+= Spring Boot - Kotlin - Demo
+:toc:
+
+== Introduction
+
+=== Motivation
+
+Implementing a small product catalog service with a REST API and persistence (MongoDB), this project is there to demonstrate some of the basic concepts in `Kotlin`.
+
+=== Tool-chain
+
+This project uses the following tool-chain:
+
+* Java 17
+* Spring Boot 3, Kotlin 1.8
+* Maven 3.8
+* direnv, make
+* Docker compose
+* Postman
+
+== Get started
+
+* Git clone this project and cd into its root
+* Setup the base infra:
+[source,bash]
+----
+make docker-infra-up
+make docker-infra-provision-mongodb
+----
+* Check status:
+[source,bash]
+----
+make docker-infra-status
+----
+* Compile and run the application:
+[source,bash]
+----
+mvn compile spring-boot:run
+----
+* Start `Postman` and import the test collection: `etc/postman`
+** Run the imported collection
+* Check the `MongoDB`: link:http://localhost:9980/[]
