@@ -1,9 +1,9 @@
 package io.dietschi.edu.products.products.model
 
-import java.util.UUID
+import java.util.*
 
 class ProductModel(
-    val id: UUID,
+    val id: UUID? = null,
     val name: String,
     private val attributes: MutableMap<String, String>
 ) {
@@ -15,4 +15,6 @@ class ProductModel(
     }
 
     fun removeAttribute(name: String) = attributes.remove(name)
+
+    fun getAttributes(): Map<String, String> = attributes.toMap()
 }

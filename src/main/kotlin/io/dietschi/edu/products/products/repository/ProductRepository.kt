@@ -16,4 +16,12 @@ class ProductRepository(
             .getOrElse { throw NoSuchElementException("Resource not found!") }
             .productModel
     }
+
+    fun add(productModel: ProductModel): UUID {
+
+        val stored = productRepositoryMongo.save(
+            productModel.toDocument()
+        )
+        return stored.id
+    }
 }

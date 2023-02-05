@@ -7,18 +7,60 @@
 	},
 	"item": [
 		{
+			"name": "Create new product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"const responseJson = pm.response.json();",
+							"pm.environment.set(\"_product_id\", responseJson.id)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"AC Cobra 427\",\n    \"attributes\": {\n        \"type\": \"car\",\n        \"designer\": \"Carol Shelby\",\n        \"build\": \"MkIII\",\n        \"year\": \"1965\",\n        \"engine\": \"V8\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/products",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Query product by id",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/products/06cd379b-d7e7-414a-9d6a-2c4bf8a573b0",
+					"raw": "{{base_url}}/products/{{_product_id}}",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"products",
-						"06cd379b-d7e7-414a-9d6a-2c4bf8a573b0"
+						"{{_product_id}}"
 					]
 				}
 			},
@@ -43,13 +85,6 @@
 					""
 				]
 			}
-		}
-	],
-	"variable": [
-		{
-			"key": "base_url",
-			"value": "http://localhost:9990",
-			"type": "string"
 		}
 	]
 }

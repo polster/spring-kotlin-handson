@@ -8,5 +8,9 @@ import java.util.UUID
 @Service
 class ProductService(private val productRepository: ProductRepository) {
 
-    fun getById(id: UUID): ProductModel = productRepository.findById(id)
+    fun getById(id: UUID): ProductModel =
+        productRepository.findById(id)
+
+    fun createNew(productModel: ProductModel): UUID =
+        productRepository.add(productModel)
 }
