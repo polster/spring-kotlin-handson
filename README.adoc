@@ -1,4 +1,4 @@
-= Spring Boot - Kotlin - Demo
+= Spring Boot - Kotlin - Hands-on
 :toc:
 
 == Introduction

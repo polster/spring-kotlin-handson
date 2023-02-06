@@ -8,12 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PatchMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import java.util.UUID
-import kotlin.math.log
 
 @RestController
 @RequestMapping("/products")
@@ -47,11 +45,11 @@ class ProductController(private var productService: ProductService) {
 
         logger.debug("PATCH: Update ${attributes.size} attributes for product with id $id")
 
-        val productModel = productService.updateAttributes(
+        val product = productService.updateAttributes(
             id,
             attributes
         )
-        return ResponseEntity.ok(productModel)
+        return ResponseEntity.ok(product)
     }
 
     companion object {
