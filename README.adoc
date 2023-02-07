@@ -5,7 +5,9 @@
 
 === Motivation
 
-Implementing a small product catalog service with a REST API and persistence (MongoDB), this project is there to demonstrate some of the basic concepts in `Kotlin`.
+Implementing a small product catalog service with a REST API and persistence (MongoDB) to hold a Brown-bag, this project is there to demonstrate some of the basic concepts in `Kotlin`.
+
+Related presentation can be found here: link:docs/intro.adoc[Slides]
 
 === Tool-chain
 
