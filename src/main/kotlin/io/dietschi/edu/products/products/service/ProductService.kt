@@ -24,4 +24,28 @@ class ProductService(private val productRepository: ProductRepository) {
 
         return productModel
     }
+
+    fun query(attributes: Map<String, String>): List<ProductModel> {
+
+        // never do this in production code, just a bad example...
+        return productRepository
+            .findAll()
+            .filter { filterByAttributes(attributes, it.getAttributes()) }
+            .sortedBy { it.name }
+            .take(10)
+    }
+
+    private fun filterByAttributes(givenAttributes: Map<String, String>,
+                                   productAttributes: Map<String, String>): Boolean {
+
+        var match = false
+        givenAttributes.forEach { entry ->
+            match = when (entry.value) {
+                productAttributes[entry.key] -> true
+                else -> false
+            }
+        }
+
+        return match
+    }
 }

@@ -24,4 +24,9 @@ class ProductRepository(
         )
         return stored.id
     }
+
+    fun findAll(): List<ProductModel> =
+        productRepositoryMongo
+            .findAll()
+            .map { it.productModel }
 }

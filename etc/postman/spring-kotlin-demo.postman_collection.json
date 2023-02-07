@@ -7,7 +7,49 @@
 	},
 	"item": [
 		{
-			"name": "Create new product",
+			"name": "Create new product 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"const responseJson = pm.response.json();",
+							"pm.environment.set(\"_product_id\", responseJson.id)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Ford GT40\",\n    \"attributes\": {\n        \"type\": \"car\",\n        \"designer\": \"Ron Bradshaw\",\n        \"build\": \"MkI\",\n        \"production\": \"1964-1969\",\n        \"engine\": \"255 CID (4181 cc) V-8\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/products",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new product 2",
 			"event": [
 				{
 					"listen": "test",
@@ -89,6 +131,33 @@
 						"products",
 						"{{_product_id}}",
 						"attributes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"car\",\n    \"designer\": \"Caroll Shelby\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/products/search",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"products",
+						"search"
 					]
 				}
 			},

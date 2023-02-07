@@ -52,6 +52,15 @@ class ProductController(private var productService: ProductService) {
         return ResponseEntity.ok(product)
     }
 
+    @PostMapping("/search")
+    fun queryByAttributes(@RequestBody attributes: Map<String, String>): ResponseEntity<List<ProductModel>> {
+
+        logger.debug("POST: Query by attributes")
+
+        val result = productService.query(attributes)
+        return ResponseEntity.ok(result)
+    }
+
     companion object {
         private val logger = LoggerFactory.getLogger(ProductController::class.java)
     }
