@@ -15,7 +15,7 @@ import java.util.UUID
 
 @RestController
 @RequestMapping("/products")
-class ProductController(private var productService: ProductService) {
+class ProductController(private val productService: ProductService) {
 
     @GetMapping("/{id}")
     fun queryById(@PathVariable("id") id: UUID): ResponseEntity<ProductModel> {

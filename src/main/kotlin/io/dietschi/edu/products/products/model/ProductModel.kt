@@ -1,9 +1,7 @@
 package io.dietschi.edu.products.products.model
 
-import java.util.*
-
 class ProductModel(
-    val model: String? = null,
+    val model: String?,
     val name: String,
     private val attributes: MutableMap<String, String>
 ) {

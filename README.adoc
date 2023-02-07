@@ -42,3 +42,9 @@ mvn compile spring-boot:run
 * Start `Postman` and import the test collection: `etc/postman`
 ** Run the imported collection
 * Check the `MongoDB`: link:http://localhost:9980/[]
+
+== Hints
+
+=== DB visibility with MongoDB
+
+Given by design, with MongoDB a newly created, but empty DB, remains invisible until the first collection resp. document has been created. This also applies to `Mongo Express`.
