@@ -1,7 +1,7 @@
 #!makefile
 
 COMPOSE_FILE_INFRA = "./etc/docker-compose/local-dev-infra.yml"
-COMPOSE_VOLUMES = $(shell docker volume ls --filter "name=gb-local*" --format "{{.Name}}")
+COMPOSE_VOLUMES = $(shell docker volume ls --filter "name=${COMPOSE_PROJECT_NAME}*" --format "{{.Name}}")
 
 docker-infra-status:
 	docker ps -a \
