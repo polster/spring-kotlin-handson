@@ -55,6 +55,8 @@ image::context.drawio.png[]
 
 Repo: link:https://github.com/polster/spring-kotlin-handson[]
 
+With a small easter-egg (ProductService)
+
 == Q&N
 
 image::thats-all-folks.png[folks,400]
