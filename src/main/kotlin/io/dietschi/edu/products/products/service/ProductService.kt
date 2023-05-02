@@ -38,14 +38,6 @@ class ProductService(private val productRepository: ProductRepository) {
     private fun filterByAttributes(givenAttributes: Map<String, String>,
                                    productAttributes: Map<String, String>): Boolean {
 
-        var match = false
-        givenAttributes.forEach { entry ->
-            match = when (entry.value) {
-                productAttributes[entry.key] -> true
-                else -> false
-            }
-        }
-
-        return match
+        return givenAttributes.all { (key, value) -> productAttributes[key] == value }
     }
 }
