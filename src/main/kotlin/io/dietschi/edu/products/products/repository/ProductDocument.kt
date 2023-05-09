@@ -16,4 +16,4 @@ data class ProductDocument(
     val createdDate: LocalDateTime = LocalDateTime.now(),
     val modifiedDate: LocalDateTime = LocalDateTime.now(),
     val version: String = "v1"
-) {}
+)
